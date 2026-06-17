@@ -8,13 +8,14 @@
 
 (def config (edn/read-string (slurp "resources/config.edn")))
 
-(defn -main [& _args]
-  (spit "public/index.html"
-        (hbs/render-file hbs-registry "toc"
-                         {:config config
-                          :entries toc}))
-  (doseq [{:keys [slug html] :as entry} entries]
-    (spit (str "public/" slug ".html")
-          (hbs/render-file hbs-registry "page"
+(defn -main [& args]
+  (let [config (assoc config :url (nth args 2 "/"))]
+    (spit "public/index.html"
+          (hbs/render-file hbs-registry "toc"
                            {:config config
-                            :page (assoc entry :html html)}))))
+                            :entries toc}))
+    (doseq [{:keys [slug html] :as entry} entries]
+      (spit (str "public/" slug ".html")
+            (hbs/render-file hbs-registry "page"
+                             {:config config
+                              :page (assoc entry :html html)})))))
