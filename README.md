@@ -1,6 +1,6 @@
 # becoming-novel
 
-The static site for the novel *Becoming*, currently unpublished anywhere.
+The static site for the novel *Becoming*, currently in progress.
 
 Reach the [preface](./doc/intro.md) for more information. To read the novel, visit the [website](https://garbados.github.io/becoming-novel).
 
