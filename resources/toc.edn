@@ -1,0 +1,6 @@
+[{:title "Preface"
+  :slug "preface"
+  :content "doc/intro.md"}
+ {:title "Chapter One"
+  :slug "chapter-one"
+  :content "resources/ch01.md"}]

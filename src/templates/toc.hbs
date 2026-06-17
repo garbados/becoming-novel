@@ -1,0 +1,10 @@
+{{#> layout}}
+    <aside class="menu">
+        <p class="menu-label">Table of Contents</p>
+        <ul class="menu-list">
+        {{#each entries}}
+            <li><a href="{{config.url}}{{slug}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </aside>
+{{/layout}}
