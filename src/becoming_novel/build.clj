@@ -14,8 +14,10 @@
           (hbs/render-file hbs-registry "toc"
                            {:config config
                             :entries toc}))
-    (doseq [{:keys [slug html] :as entry} entries]
+    (doseq [[i {:keys [slug] :as entry}] (map-indexed vector entries)
+            :let [next-entry (nth entries (inc i) nil)]]
       (spit (str "public/" slug ".html")
             (hbs/render-file hbs-registry "page"
                              {:config config
-                              :page (assoc entry :html html)})))))
+                              :page entry
+                              :next next-entry})))))

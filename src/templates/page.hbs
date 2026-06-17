@@ -1,5 +1,9 @@
 {{#> layout}}
   <div class="content">
     {{{page.html}}}
+    {{#if next}}
+    <hr>
+    <h3>Next: <a href="{{config.url}}{{next.slug}}">{{next.title}}</a></h3>
+    {{/if}}
   </div>
 {{/layout}}
