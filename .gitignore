@@ -13,4 +13,4 @@ pom.xml.asc
 .hg/
 .lsp
 .clj-kondo
-public/chapter-one.html public/index.html public/preface.html
+public/*.html
